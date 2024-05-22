@@ -41,22 +41,17 @@ public class Main {
         if (map.containsKey(newAge)) {
 
             int tamount = map.get(newAge).size();
+            Comparator sortName = new NameComporator();
+            map.get(newAge).sort(sortName);
 
             for (int i=0; i<tamount; i++) {
+
                 System.out.println(map.get(newAge).get(i).toString());
             }
         }
         else {
             System.out.println("Пользователь с возрастом '" + newAge + "' не найден");
         }
-
-//        Comparator sortAge = new AgeComporator();
-//        myArrayList.sort(sortAge);
-//
-//        for (int i=0; i<5; i++) {
-//            System.out.println(myArrayList.get(i).toString());
-//        }
-
 
     }
 }
